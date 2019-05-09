@@ -24,3 +24,12 @@ python app.py
 ```
 then on a web browser go to localhost:5000
 
+## Screencaps
+
+![alt text](https://github.com/nimotli/DigitRecognition/blob/master/static/images/1.png)
+
+![alt text](https://github.com/nimotli/DigitRecognition/blob/master/static/images/1p.png)
+
+![alt text](https://github.com/nimotli/DigitRecognition/blob/master/static/images/2.png)
+
+![alt text](https://github.com/nimotli/DigitRecognition/blob/master/static/images/2p.png)
