@@ -1,0 +1,55 @@
+{% extends "bootstrap/base.html" %}
+{% block title %}This is an example page{% endblock %}
+{% block styles %}
+{{super()}}
+<link rel="stylesheet"
+      href="{{url_for('.static', filename='css/style.css')}}">
+{% endblock %}
+{% block navbar %}
+<div class="navbar navbar-fixed-top">
+  <!-- ... -->
+</div>
+{% endblock %}
+
+{% block content %}
+    <div class="bg-primary">
+        
+    </div>
+    
+    <div class="row">
+        
+        <div class="col-md-3 bg-primary" style="margin:20px;height:370px;">
+            <h4>Draw a number here</h4>
+            <canvas onload="init()" id="can" width="280" height="280" style="border:2px solid;"></canvas>
+            <div class="row">
+                <button onclick="erase()" class="btn" style="background-color:black;">Clear</button>
+                <button onclick="predict()" class="btn" style="background-color:black;">Predict</button>
+            </div>
+        </div>
+        <div class="col-md-5 bg-primary" style="margin:20px;padding:0 0 0 10px;max-height:370px;overflow-y: scroll">
+            <img src="" id="canvasimg" style="display: none;">
+            <h4>Or select an image</h4>
+            {%for image in images%} 
+                <img src="{{url_for('static', filename='digits/'+image)}}" style="border:1px solid seagreen;" class="digitImg" id="{{image}}">
+            {%endfor%} 
+        </div>
+        <div class="col-md-3 bg-primary" style="margin:20px 0 0 20px;height:370px;" id="predictionPanel">
+            <center><img src="{{url_for('static', filename='images/loading.png')}}" height=100 id="rotated"></center>
+            <h3 id="prediction">The pridiction is: 2</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+
+        </div>
+        <div class="col-md-5 bg-primary">
+            
+        </div>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+{{super()}}
+<script src="{{url_for('.static', filename='js/draw.js')}}"></script>
+<script src="{{url_for('.static', filename='js/prediction.js')}}"></script>
+{% endblock %}
