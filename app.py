@@ -47,6 +47,7 @@ def createModel(modelPath):
     model.add(Flatten())
     model.add(Dense(10, activation='softmax'))
     model=load_model(modelPath)
+    
     return model
 
 if __name__ == "__main__":
